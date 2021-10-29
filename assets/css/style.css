@@ -70,13 +70,14 @@ textarea {
 }
 
 .saveBtn i:hover {
-  font-size: 30px;
+  font-size: 48px;
+  color: black;
   transition: all 0.3s ease-in-out;
 }
 
 i {
-  font-size: 36px;
-  margin-top: -20px;
+  font-size: 49px;
+  margin-top: -23px;
   text-align: center;
   margin-left: -3px;
 }

@@ -27,7 +27,6 @@ function displayTime() {
 }
 displayTime();
 
-
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 /* 1. create a function that uses momentjs to know what the current time is and then show on the calender if it's in the past, present, or future with the classes in css
