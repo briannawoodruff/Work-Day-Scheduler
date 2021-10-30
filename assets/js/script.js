@@ -9,13 +9,13 @@ var calenderInput = localStorage.getItem("dataObject") || "[]";
 var calenderInputArr = JSON.parse(calenderInput);
 
 // loop through each item in the array, grab each item to then display if there is an item
-for (i = 0; i < calenderInputArr.length; i++) {
+for (var i = 0; i < calenderInputArr.length; i++) {
   var timeID = calenderInputArr[i].time
   var valueVal = calenderInputArr[i].value
   $('#' + timeID).val(valueVal);
-  console.log(timeID)
-  console.log(valueVal)
-  console.log($('#' + timeID))
+  // console.log(timeID)
+  // console.log(valueVal)
+  // console.log($('#' + timeID))
 }
 
 // WHEN I open the planner
@@ -32,13 +32,13 @@ displayTime();
 /* 1. create a function that uses momentjs to know what the current time is and then show on the calender if it's in the past, present, or future with the classes in css
 for loop [$("").each(function ()] and if/ else statements in jquery? */
 function timeTracker() {
-  var currentTime = moment().hour();
-
+  var currentTime = moment().hours();
+// console.log(currentTime)
   // loop over each time block to compare to current time
   $(".time-block").each(function () {
     // parsing through each time block to get an integer to compare to the time integer
-    var blockTime = parseInt($(this).siblings(".description").attr("id"));
-    
+    var blockTime = parseInt($(this).children(".description").attr("id"))
+
     // past time
     if (blockTime < currentTime) {
       $(this).removeClass("future");
@@ -67,7 +67,7 @@ saveBtn.on("click", function () {
   var time = $(this).siblings(".description").attr("id")
   var text = $(this).siblings(".description").val()
   calenderInputArr.push({ time: time, value: text })
-  console.log(calenderInputArr)
+  // console.log(calenderInputArr)
   localStorage.setItem("dataObject", JSON.stringify(calenderInputArr))
 })
 // run again
